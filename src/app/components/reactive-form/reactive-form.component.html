@@ -1,0 +1,81 @@
+<div class="container-md">
+
+  <form class="row g-3 needs-validation" [formGroup]='reactiveForm' (ngSubmit)="onSubmit()">
+    <div class="col-md-4 form-group">
+      <label class="form-label">Name</label>
+      <input formControlName="name" type="text" class="form-control" id="name" required
+        [ngClass]="{ 'is-invalid': submitted && this.f.name.errors }">
+      <div *ngIf="this.f.name && (this.f.name.dirty || this.f.name.touched || submitted)" class="danger-txt">
+        <div *ngIf="this.f.name.errors">Name is required</div>
+      </div>
+    </div>
+
+    <div class="col-md-4 form-group">
+      <label class="form-label">Email</label>
+      <input formControlName="email" type="email" class="form-control" id="email1" value=""
+        [ngClass]="{ 'is-invalid': submitted && this.f.email.errors }" required>
+      <div *ngIf="this.f.email.dirty || this.f.email.touched || submitted" class="danger-txt">
+        <div *ngIf="this.f.email.errors">email is required</div>
+        <div *ngIf="this.f.email.invalid">invalid email</div>
+      </div>
+
+    </div>
+    <div class="col-md-4 form-group">
+      <label class="form-label">Confirm Email</label>
+      <input formControlName="confirmemail" type="email" class="form-control" id="email2" value="" required
+        [ngClass]="{ 'is-invalid': submitted && this.f.confirmemail.errors }">
+      <div *ngIf="this.f.confirmemail.dirty || this.f.confirmemail.touched || submitted" class="danger-txt">
+        <div *ngIf="this.f.confirmemail.errors">confirmemail is required</div>
+      </div>
+    </div>
+
+    <div class="col-md-4 form-group">
+      <label class="form-label">Graduation Degree</label>
+      <input formControlName="degree" type="text" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && this.f.degree }" id="degree" value="" required>
+      <div *ngIf="this.f.degree.dirty || this.f.degree.touched || submitted" class="danger-txt">
+        <div *ngIf="this.f.degree.errors">degree is required</div>
+      </div>
+    </div>
+
+    <div class="col-md-4 form-group">
+      <label class="form-label">Date of birth</label>
+      <input formControlName="dob" type="date" [ngClass]="{ 'is-invalid': submitted && this.f.dob.errors }"
+        class="form-control" id="dob" value="" required>
+      <div *ngIf="this.f.dob.dirty || this.f.dob.touched || submitted" class="danger-txt">
+        <div *ngIf="this.f.dob.errors">dob is required</div>
+      </div>
+    </div>
+
+    <div class="col-md-4 form-group">
+      <label class="form-label">Country</label>
+      <input formControlName='country' type="text" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && this.f.country.errors }" id="country" value="" required>
+      <div *ngIf="this.f.country.dirty || this.f.country.touched || submitted" class="danger-txt">
+        <div *ngIf="this.f.country.errors">country is required</div>
+      </div>
+    </div>
+
+    <div class="col-md-4 form-group">
+      <label class="form-label">State</label>
+      <input formControlName="state" type="text" [ngClass]="{ 'is-invalid': submitted && this.f.state.errors }"
+        class="form-control" id="state" value="" required>
+      <div *ngIf="this.f.state.dirty || this.f.state.touched || submitted" class="danger-txt">
+        <div *ngIf="this.f.state.errors">state is required</div>
+      </div>
+    </div>
+
+    <div class="col-md-4 form-group">
+      <label class="form-label">City</label>
+      <input formControlName="city" type="text" [ngClass]="{ 'is-invalid': submitted && this.f.city.errors }"
+        class="form-control" id="city" value="" required>
+      <div *ngIf="this.f.city.dirty || this.f.city.touched || submitted" class="danger-txt">
+        <div *ngIf="this.f.city.errors">city is required</div>
+      </div>
+    </div>
+
+    <div class="col-12 text-center">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

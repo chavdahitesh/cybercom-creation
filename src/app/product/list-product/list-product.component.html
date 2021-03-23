@@ -1,0 +1,18 @@
+<table class="table" *ngIf=prodList>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">category</th>
+      <th scope="col">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of prodList">
+      <th scope="row">{{prod?.number}}</th>
+      <td>{{prod?.name}}</td>
+      <td>{{prod?.category}}</td>
+      <td>{{prod?.desc}}</td>
+    </tr>
+  </tbody>
+</table>
